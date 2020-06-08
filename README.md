@@ -2,7 +2,7 @@
 <h2>Image Captioning in PyTorch</h2>
 </div>
 
----
+
 ### Description
 This project implements a Image Captioning model based on the [Show and Tell](https://arxiv.org/abs/1411.4555) paper. It uses the [Flickr30k](https://www.kaggle.com/hsankesara/flickr-image-dataset) dataset for training of the model. This is not a strict paper implementation, it's based on the ideas from paper, however I experimented with few things and also used different optimizer and learning rate scheduler. Also, I didn't find the official train/test split for this data, therefore I use 29,000 images as training and rest as validation set. The results are comparable to the paper. It achieves a 86.87% Bleu-4 score.
 

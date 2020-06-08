@@ -4,7 +4,7 @@
 
 
 ### Description
-This project implements a Image Captioning model based on the [Show and Tell](https://arxiv.org/abs/1411.4555) paper. It uses the [Flickr30k](https://www.kaggle.com/hsankesara/flickr-image-dataset) dataset for training of the model. This is not a strict paper implementation, it's based on the ideas from paper, however I experimented with few things and also used different optimizer and learning rate scheduler. Also, I didn't find the official train/test split for this data, therefore I use 29,000 images as training and rest as validation set. The results are comparable to the paper. It achieves a 86.87% Bleu-4 score.
+This project implements a Image Captioning model based on the [Show and Tell](https://arxiv.org/abs/1411.4555) paper. It uses the [Flickr30k](https://www.kaggle.com/hsankesara/flickr-image-dataset) dataset for training of the model. This is not a strict paper implementation, it's based on the ideas from paper, I experimented with few things and also used different optimizer and learning rate scheduler. Also, I didn't find the official train/test split for this data, therefore I use 29,000 images as training and rest as validation set. The results are comparable to the paper. It achieves 86.87% Bleu-4 score.
 
 ### Requirements
 * python >= 3.7
@@ -25,7 +25,7 @@ $ python predict.py --model /path/to/model_checkpoint.ckpt --path /path/to/image
 Trained model (checkpoint.ckpt) is available at above link.
 
 ### Methodology
-The model uses a Imagenet pretrained Resnet50 as the backbone encoder and a 3 layer stacked LSTM as the decoder. To reduce the training time, output of Resnet50 backbone was calculated and stored for all images. BPTT is done for 85 timesteps. Adam optimizer with Cosine Annealing Learning Rate Scheduler was used to train the model for 20 epochs.
+The model uses an Imagenet pretrained Resnet50 as the backbone encoder and a 3 layer stacked LSTM as the decoder. To reduce the training time, output of Resnet50 backbone was calculated and stored for all images. BPTT is done for 85 timesteps. Adam optimizer with Cosine Annealing Learning Rate Scheduler is used to train the model for 20 epochs.
 
 ### Analysis and Results
 Here is a list of things I tried:
